@@ -1,0 +1,24 @@
+{
+  "name": "kiwi-hackathon-frontend",
+  "version": "1.0.0",
+  "description": "Kiwi.com Hackathon",
+  "private": true,
+  "engines": {
+    "node": "^8.1.2"
+  },
+  "dependencies": {
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  },
+  "devDependencies": {
+    "react-scripts": "1.0.7",
+    "prettier": "^1.4.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "prettier": "prettier --single-quote --trailing-comma all --write '**/*.js'"
+  }
+}
