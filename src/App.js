@@ -208,7 +208,11 @@ class App extends Component {
             {/*<Search applySearch={this.handleSearch} />*/}
             <Route
               path="/cities-list"
-              render={() => <CitiesPreviewList data={this.state.data} />}
+              render={() =>
+                <CitiesPreviewList
+                  activitiesCount={this.state.chosenTiles.length}
+                  data={this.state.data}
+                />}
             />
           </div>
         </div>
