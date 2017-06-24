@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import CitiesCount from './CitiesCount';
 import Search from './Search';
+import Sidebar from './Sidebar';
 import './static/css/index.css';
 
 class App extends Component {
@@ -13,15 +13,18 @@ class App extends Component {
       data: [],
     };
     this.tiles = [
-
       {
+        name: 'Skateboarding',
+        tagQuery: 'skateboard%7Cskatepark',
+        nameC: 'skateboarding',
+
         name: 'Good food',
         tagQuery: 'food',
         nameC: 'food',
       },
       {
         name: 'Bars / pubs',
-        tagQuery: 'bar',
+        tagQuery: 'Hotel',
         nameC: 'bar',
       },
       {
@@ -41,18 +44,13 @@ class App extends Component {
       },
       {
         name: 'Spa / massages',
-        tagQuery: 'spa|massages',
+        tagQuery: 'spa',
         nameC: 'massages',
       },
       {
         name: 'Hiking',
         tagQuery: 'hiking',
         nameC: 'hiking',
-      },
-      {
-        name: 'Skateboarding',
-        tagQuery: 'skateboard',
-        nameC: 'skateboarding',
       },
       {
         name: 'Horse riding',
@@ -77,7 +75,7 @@ class App extends Component {
     ];
   }
   getData = () => {
-    const query = this.state.chosenTags.join(',');
+    const query = this.state.chosenTags.join('%7C');
     fetch(
       `https://yojri0bch0.execute-api.eu-central-1.amazonaws.com/latest/places?tags=${query}`,
       {
@@ -108,7 +106,11 @@ class App extends Component {
       },
       () => {
         console.log('chosen tags: ', this.state.chosenTags);
-        this.getData();
+        if (this.state.chosenTags.length === 0) {
+          this.setState({ data: [] });
+        } else {
+          this.getData();
+        }
       },
     );
   };
@@ -146,49 +148,12 @@ class App extends Component {
     return (
       <div className="App">
         <div className="container">
-          <div className="column--left">
-            <div className="logo"></div>
 
-            <div className="title">Where do you wanna go?</div>
-            <div className="location">
-              <div className="place">
-                <i className="fa fa-globe" aria-hidden="true" /> Literally anywhere.
-              </div>
-              <div className="button--link">choose some</div>
-            </div>
-
-            <div className="title">What will you enjoy on your trip?</div>
-
-            {this.state.chosenTiles.map(tile =>
-              <div className={`interest ${tile.nameC}`} key={tile.tagQuery + tile.name}>
-                <div className="name">
-                  <div className="interest-icon"></div>
-                  {tile.name}
-                </div>
-                <div className="icon" onClick={() => this.removeTile(tile)}>
-                  <i className="fa fa-times" aria-hidden="true" />
-                </div>
-              </div>,
-            )}
-
-            {this.state.chosenTiles.length == 0 ? (
-               <div className="empty-state">Nothing here... :(<br/><br/><span>Select some activities. <i className="fa fa-arrow-right" aria-hidden="true"></i> <i className="fa fa-arrow-right" aria-hidden="true"></i> <i className="fa fa-arrow-right" aria-hidden="true"></i></span>
-                 <br/><br/>Or you can stay home and enjoy photos from your last trip. :-)</div>
-            ):null}
-
-            <div className="button--huge">
-              <div className="count">
-                <CitiesCount
-                  count={
-                    noCitiesToShow ? '1,634,573' : `${this.state.data.total}`
-                  }
-                />
-              </div>
-              <div className="">
-                places that match your needs
-              </div>
-            </div>
-          </div>
+          <Sidebar
+            total={this.state.data.total}
+            chosenTiles={this.state.chosenTiles}
+            noCitiesToShow={noCitiesToShow}
+          />
 
           <div className="column--right">
             <Search applySearch={this.handleSearch} />
