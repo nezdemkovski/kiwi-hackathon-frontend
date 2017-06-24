@@ -24,29 +24,32 @@ class CitiesPreview extends Component {
           Accept: 'application/json',
         },
       },
-    ).then(response => {
-      return response.json();
-    })
+    )
+      .then(response => {
+        return response.json();
+      })
       .then(result => {
-        this.setState({ data: result[0] && result[0].price !== 'undefined' && result[0].price });
+        this.setState({
+          data: result[0] && result[0].price !== 'undefined' && result[0].price,
+        });
       });
   };
 
   renderCityPreview = () => {
-    const {
-      data,
-    } = this.state;
+    const { data } = this.state;
 
     console.log(data);
 
-      return (
-        <div className="city barcelona">
-          <div className="map" />
-          <div className="gradient-layer-map" />
+    return (
+      <div className="city barcelona">
+        <div className="map" />
+        <div className="gradient-layer-map" />
 
         <div className="top">
           <div className="info">
-            <div className="title">{this.props.city.city} </div>
+            <div className="title">
+              {this.props.city.city}, {this.props.city.places[0].country}
+            </div>
             <div className="description">
               You can enjoy {this.props.city.places.length} places based on{' '}
               {this.props.activitiesCount} of
@@ -56,15 +59,15 @@ class CitiesPreview extends Component {
             </div>
           </div>
 
-            <div className="rating">
-              <i className="fa fa-star yellow" aria-hidden="true" />
-              <i className="fa fa-star yellow" aria-hidden="true" />
-              <i className="fa fa-star yellow" aria-hidden="true" />
-              <i className="fa fa-star yellow" aria-hidden="true" />
-              <i className="fa fa-star" aria-hidden="true" />
+          <div className="rating">
+            <i className="fa fa-star yellow" aria-hidden="true" />
+            <i className="fa fa-star yellow" aria-hidden="true" />
+            <i className="fa fa-star yellow" aria-hidden="true" />
+            <i className="fa fa-star yellow" aria-hidden="true" />
+            <i className="fa fa-star" aria-hidden="true" />
 
-            </div>
           </div>
+        </div>
 
         <div className="center">
           <div className="button-transparent">
@@ -88,9 +91,8 @@ class CitiesPreview extends Component {
           </div>
 
         </div>
-        </div>
-      )
-
+      </div>
+    );
   };
 
   render() {
