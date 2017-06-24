@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CitiesCount from './CitiesCount';
+import Search from './Search';
 import './static/css/index.css';
 
 class App extends Component {
@@ -90,11 +91,22 @@ class App extends Component {
     });
     this.removeTag(tile.tagQuery);
   };
+  handleSearch = e => {
+    e.preventDefault();
+    this.setState({ query: e.target.value });
+  };
+
   render() {
+    const re = RegExp(this.state.query, 'i');
+
     const noCitiesToShow =
       !this.state.chosenTags.length ||
       !this.state.data ||
       !this.state.data.length;
+    const tilesToShow = this.state.query
+      ? this.tiles.filter(tile => tile.name.match(re))
+      : this.tiles;
+
     return (
       <div className="App">
         <div className="container">
@@ -134,21 +146,9 @@ class App extends Component {
           </div>
 
           <div className="column--right">
-            <div className="search">
-              <form>
-                <label>
-                  <i className="fa fa-search" aria-hidden="true" />
-
-                  <input
-                    type="text"
-                    placeholder="Diving, beach, hiking, party, ..."
-                  />
-                </label>
-              </form>
-            </div>
-
+            <Search applySearch={this.handleSearch} />
             <div className="list">
-              {this.tiles.map(tile =>
+              {tilesToShow.map(tile =>
                 <div
                   className="tile"
                   key={tile.name + tile.tagQuery}
