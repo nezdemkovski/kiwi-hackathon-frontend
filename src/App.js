@@ -43,6 +43,16 @@ class App extends Component {
         tagQuery: 'sailing',
         nameC: 'sailing',
       },
+      {
+        name: 'Kayaking',
+        tagQuery: 'kayaking',
+        nameC: 'kayaking',
+      },
+      {
+        name: 'Dolphin swimming',
+        tagQuery: 'dolphin',
+        nameC: 'dolphin',
+      }
     ];
   }
   getData = () => {
