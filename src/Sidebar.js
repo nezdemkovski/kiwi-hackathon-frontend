@@ -45,7 +45,7 @@ class Sidebar extends Component {
               <div className="interest-icon" />
               {tile.name}
             </div>
-            <div className="icon" onClick={() => this.removeTile(tile)}>
+            <div className="icon" onClick={() => this.props.removeTile(tile)}>
               <i className="fa fa-times" aria-hidden="true" />
             </div>
           </div>,

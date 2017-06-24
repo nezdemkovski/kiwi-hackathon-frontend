@@ -12,16 +12,12 @@ class App extends Component {
       places: [],
       chosenTiles: [],
       chosenTags: [],
-      data: [],
+      data: null,
     };
     this.tiles = [
       {
-        name: 'Skateboarding',
-        tagQuery: 'skateboard%7Cskatepark',
-        nameC: 'skateboarding',
-
         name: 'Good food',
-        tagQuery: 'food',
+        tagQuery: 'restaurant',
         nameC: 'food',
       },
       {
@@ -43,6 +39,11 @@ class App extends Component {
         name: 'Surfing',
         tagQuery: 'surfing',
         nameC: 'surfing',
+      },
+      {
+        name: 'Skateboarding',
+        tagQuery: 'skateboard%7Cskatepark',
+        nameC: 'skateboarding',
       },
       {
         name: 'Beach',
@@ -148,7 +149,7 @@ class App extends Component {
     const noCitiesToShow =
       !this.state.chosenTags.length ||
       !this.state.data ||
-      !this.state.data.total;
+      (this.state.data && !this.state.data.total);
     const tilesToShow = this.state.query
       ? this.tiles.filter(tile => tile.name.match(re))
       : this.tiles;
@@ -157,9 +158,10 @@ class App extends Component {
         <div className="container">
 
           <Sidebar
-            total={this.state.data.total}
+            total={this.state.data ? this.state.data.total : '0'}
             chosenTiles={this.state.chosenTiles}
             noCitiesToShow={noCitiesToShow}
+            removeTile={this.removeTile}
           />
 
           <div className="column--right">
@@ -204,7 +206,10 @@ class App extends Component {
                 </div>}
             />
             {/*<Search applySearch={this.handleSearch} />*/}
-            <Route path="/cities-list" component={CitiesPreviewList} />
+            <Route
+              path="/cities-list"
+              render={() => <CitiesPreviewList data={this.state.data} />}
+            />
           </div>
         </div>
       </div>
