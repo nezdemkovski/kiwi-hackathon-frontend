@@ -172,6 +172,31 @@ body {
       background-image: url(../images/icon-kayaking.png);
     }
   }
+  &.food {
+    .interest-icon {
+      background-image: url(../images/icon-food.png);
+      background-size: 20px;
+    }
+  }
+
+  &.bar {
+    .interest-icon {
+      background-image: url(../images/icon-bars.png);
+    }
+  }
+
+  &.beach {
+    .interest-icon {
+      background-image: url(../images/icon-beach.png);
+    }
+  }
+
+  &.massages {
+    .interest-icon {
+      background-image: url(../images/icon-massages.png);
+      background-size: 20px;
+    }
+  }
 
 
 }
