@@ -1,24 +1,21 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import * as SygicTravelSDK from 'sygic-travel-js-sdk';
+import CitiesCount from './CitiesCount';
 import './App.css';
 
+const apiUrl = 'https://api.sygictravelapi.com/0.1/en/';
+const clientKey = 'nSCQiwW9R88zlr0P7J2VocUXBnKejmO26m9eIUl8';
+
 class App extends Component {
-  componentWillMount() {
-    fetch(
-      'https://api.sygictravelapi.com/0.2/en/places/list?tags=hotel&levels=poi&parents=country:5',
-      {
-        method: 'GET',
-        headers: {
-          Accept: 'application/json',
-          'x-api-key': 'nSCQiwW9R88zlr0P7J2VocUXBnKejmO26m9eIUl8',
-        },
-      },
-    ).then(resp => {
-      console.log(response);
-    });
+  constructor(props) {
+    super(props);
+    this.state = {
+      places: [],
+    };
   }
+  componentWillMount() {}
   render() {
-    return <div className="App" />;
+    return <div className="App"><CitiesCount /></div>;
   }
 }
 
