@@ -65,7 +65,7 @@ body {
   @include gradient;
 
   .empty-state {
-    margin: 15px;
+    margin: 40px 0;
     color: $color--accent;
     font-weight: 600;
 
@@ -149,6 +149,13 @@ body {
     }
   }
 
+
+  &.sightseeings {
+    .interest-icon {
+      background-image: url(../images/icon-photo.png);
+    }
+  }
+
   &.horse-riding {
     .interest-icon {
       background-image: url(../images/icon-horseriding.png);
@@ -220,8 +227,13 @@ button:focus {
 .column--right {
   width: 75%;
   background-color: $color--background;
-  padding: 150px 15px 25px;
+  padding: 15px 15px 25px;
   margin-left: 25%;
+
+  .placeholder {
+    height: 135px;
+    width: 100%;
+  }
 
   &:after {
     content: "";
@@ -317,6 +329,19 @@ button:focus {
         @include gradient-yellow
 
       }
+
+      &:after {
+        content:'';
+        background-image: url(../images/check.png);
+        background-size: cover;
+        height: 20px;
+        width: 20px;
+        position: absolute;
+        z-index: 20;
+        right: 15px;
+        top: 15px;
+
+      }
     }
 
     &.skateboarding {
@@ -351,6 +376,14 @@ button:focus {
 
       .icon {
         background-image: url(../images/icon-hiking.png);
+      }
+    }
+
+    &.sightseeings {
+      background-image: url(../images/bg-sightseeings.jpg);
+
+      .icon {
+        background-image: url(../images/icon-photo.png);
       }
     }
 
@@ -447,14 +480,17 @@ button:focus {
   margin-top: 30px;
   position: absolute;
   bottom: 0; left: 0; right: 0;
+  transition: ease-in-out 0.5s height;
 
   .count {
     font-weight: 800;
-    font-size: 36px;
+    font-size: 32px;
   }
 
   .button-transparent{
     margin-top: 10px !important;
+    margin-bottom: 10px !important;
+
   }
 }
 
@@ -551,7 +587,7 @@ button:focus {
   font-size: 22px;
   border-radius: 4px;
   color: white;
-  margin: 50px auto;
+  margin: 80px auto 0;
   position: relative;
   cursor: pointer;
   overflow:hidden;
