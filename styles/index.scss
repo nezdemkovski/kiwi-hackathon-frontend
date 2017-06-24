@@ -149,6 +149,13 @@ body {
     }
   }
 
+
+  &.sightseeings {
+    .interest-icon {
+      background-image: url(../images/icon-photo.png);
+    }
+  }
+
   &.horse-riding {
     .interest-icon {
       background-image: url(../images/icon-horseriding.png);
@@ -369,6 +376,14 @@ button:focus {
 
       .icon {
         background-image: url(../images/icon-hiking.png);
+      }
+    }
+
+    &.sightseeings {
+      background-image: url(../images/bg-sightseeings.jpg);
+
+      .icon {
+        background-image: url(../images/icon-photo.png);
       }
     }
 

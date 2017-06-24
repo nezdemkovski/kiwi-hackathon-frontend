@@ -35,6 +35,11 @@ class App extends Component {
         nameC: 'diving',
       },
       {
+        name: 'Sightseeings',
+        tagQuery: 'sightseings',
+        nameC: 'sightseeings',
+      },
+      {
         name: 'Surfing',
         tagQuery: 'surfing',
         nameC: 'surfing',
