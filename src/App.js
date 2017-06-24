@@ -16,12 +16,8 @@ class App extends Component {
     };
     this.tiles = [
       {
-        name: 'Skateboarding',
-        tagQuery: 'skateboard%7Cskatepark',
-        nameC: 'skateboarding',
-
         name: 'Good food',
-        tagQuery: 'food',
+        tagQuery: 'restaurant',
         nameC: 'food',
       },
       {
@@ -38,6 +34,11 @@ class App extends Component {
         name: 'Surfing',
         tagQuery: 'surfing',
         nameC: 'surfing',
+      },
+      {
+        name: 'Skateboarding',
+        tagQuery: 'skateboard%7Cskatepark',
+        nameC: 'skateboarding',
       },
       {
         name: 'Beach',
