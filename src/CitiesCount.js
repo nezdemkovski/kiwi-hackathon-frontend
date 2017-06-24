@@ -70,7 +70,7 @@ class CitiesCount extends Component {
           this.text = node;
         }}
       >
-        {this.state.count}
+        {this.state.count} places
       </div>
     );
   }

@@ -160,6 +160,14 @@ class App extends Component {
           <div className="column--right">
 
             <Route
+                exact
+                path="/"
+                render={() => {
+                  return <div className="placeholder" />;
+                }}
+            />
+
+            <Route
               exact
               path="/"
               render={() =>

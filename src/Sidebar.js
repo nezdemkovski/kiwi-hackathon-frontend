@@ -31,7 +31,10 @@ class Sidebar extends Component {
           <div className="button--link">choose some</div>
         </div>
 
-        <div className="title">What will you enjoy on your trip?</div>
+          {this.props.chosenTiles.length !== 0
+              ? <div className="title">What will you enjoy on your trip?</div>
+              : null}
+
 
         {this.props.chosenTiles.map(tile =>
           <div
@@ -48,18 +51,11 @@ class Sidebar extends Component {
           </div>,
         )}
 
-        {this.props.chosenTiles.length === 0
-          ? <div className="empty-state">
-              Select some activities.{' '}
-              <i className="fa fa-arrow-right" aria-hidden="true" />{' '}
-              <i className="fa fa-arrow-right" aria-hidden="true" />{' '}
-              <i className="fa fa-arrow-right" aria-hidden="true" />
-              <br /><br />Or you can stay home and enjoy photos from your
-              last trip. :-)
-            </div>
-          : null}
-
         <div className="button--huge">
+
+            {this.props.chosenTiles.length === 0
+                ? <div>In the world is approx.</div>
+                : <div>In the world is exactly</div>}
           <div className="count">
             <CitiesCount
               count={
@@ -69,15 +65,22 @@ class Sidebar extends Component {
               }
             />
           </div>
-          <div className="">
-            places that match your needs
-          </div>
-            <Link to="/cities-list">
-                <div className="button-transparent small">
+              {this.props.chosenTiles.length === 0
+                  ? <div>that can match your needs. Uff.</div>
+                  : <div>that match your needs.</div>}
+
+            {this.props.chosenTiles.length === 0
+                ? <div className="empty-state">
+              Pick activities and find the best for you  {'     '}<i className="fa fa-arrow-right" aria-hidden="true" />
+            </div>
+                : <Link to="/cities-list">
+                <div className="button-transparent">
                     <div className="bg" />
-                    <div className="text">Show matched cities </div>
+                    <div className="text">Show these places <i className="fa fa-chevron-right" aria-hidden="true"></i>
+                    </div>
                 </div>
-            </Link>
+            </Link>}
+
         </div>
       </div>
     );
