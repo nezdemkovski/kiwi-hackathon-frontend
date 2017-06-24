@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import CitiesCount from './CitiesCount';
-import { Link } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom';
 
 class Sidebar extends Component {
   render() {
@@ -9,6 +9,19 @@ class Sidebar extends Component {
         <Link to="/">
           <div className="logo" />
         </Link>
+        <Route
+          exact
+          path="/"
+          render={() => {
+            return <div />;
+          }}
+        />
+        <Route
+          path="/cities-list"
+          render={() => {
+            return <div />;
+          }}
+        />
         <div className="title">Where do you wanna go?</div>
         <div className="location">
           <div className="place">
