@@ -9,7 +9,7 @@ class CitiesPreviewList extends Component {
     });
     return (
       <div className="cities">
-        {cities.map(city => <CityPreview key={city.id} city={city} />)}
+        {cities.map((city, id) => <CityPreview key={id} city={city} />)}
       </div>
     );
   }
