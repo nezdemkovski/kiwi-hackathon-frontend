@@ -54,7 +54,7 @@ class App extends Component {
         return response.json();
       })
       .then(result => {
-        console.log(result);
+        console.log('response:', result);
         this.setState({ data: result });
       });
   };
@@ -64,21 +64,22 @@ class App extends Component {
     });
   };
   removeTag = tag => {
-    console.log(tag);
     this.setState(
       {
         chosenTags: this.state.chosenTags.filter(item => item !== tag),
       },
       () => {
-        console.log(this.state.chosenTags);
+        console.log('chosen tags: ', this.state.chosenTags);
         this.getData();
       },
     );
   };
-  chooseTile = tile => {
+  toggleTile = tile => {
     if (!this.state.chosenTiles.some(item => item.name === tile.name)) {
       this.setState({ chosenTiles: [...this.state.chosenTiles, tile] });
       this.addTag(tile.tagQuery);
+    } else {
+      this.removeTile(tile);
     }
   };
   removeTile = tile => {
@@ -90,7 +91,6 @@ class App extends Component {
     this.removeTag(tile.tagQuery);
   };
   render() {
-    console.log(this.state.data);
     const noCitiesToShow =
       !this.state.chosenTags.length ||
       !this.state.data ||
@@ -153,7 +153,7 @@ class App extends Component {
                   className="tile"
                   key={tile.name + tile.tagQuery}
                   onClick={() => {
-                    this.chooseTile(tile);
+                    this.toggleTile(tile);
                   }}
                 >
                   {tile.name}
