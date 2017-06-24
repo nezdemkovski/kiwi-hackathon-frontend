@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import Search from './Search';
 import Sidebar from './Sidebar';
 import './static/css/index.css';
@@ -156,6 +157,12 @@ class App extends Component {
           />
 
           <div className="column--right">
+
+            <Route
+              exact
+              path="/"
+              render={() => <Search onSearch={this.handleSearch} />}
+            />
             <Search applySearch={this.handleSearch} />
 
             <div className="cities">
