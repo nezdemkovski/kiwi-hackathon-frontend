@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import Search from './Search';
 import Sidebar from './Sidebar';
+import CitiesPreviewList from './CitiesPreviewList';
 import './static/css/index.css';
 
 class App extends Component {
@@ -161,70 +162,36 @@ class App extends Component {
             <Route
               exact
               path="/"
-              render={() => <Search onSearch={this.handleSearch} />}
+              render={() =>
+                <div>
+                  <Search applySearch={this.handleSearch} />
+                  <div className="list">
+                    {tilesToShow.map(tile => {
+                      const isSelected = this.state.chosenTiles.some(
+                        item => item.name === tile.name,
+                      )
+                        ? 'selected'
+                        : '';
+                      return (
+                        <div
+                          className={`tile ${tile.nameC} ${isSelected}`}
+                          key={tile.name + tile.tagQuery}
+                          onClick={() => {
+                            this.toggleTile(tile);
+                          }}
+                        >
+                          <div className="gradient-layer" />
+                          <div className="icon" />
+                          <div className="name">{tile.name}</div>
+
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>}
             />
-            <Search applySearch={this.handleSearch} />
-
-            <div className="cities">
-              <div className="city barcelona">
-                <div className="map"></div>
-                  <div className="gradient-layer-map"></div>
-
-                    <div className="top">
-                      <div className="info">
-                        <div className="title">Barcelona, Spain</div>
-                        <div className="description">You can enjoy 3 from 5 of your preferred activities in Barcelona.</div>
-                      </div>
-
-                      <div className="rating">
-                        <i className="fa fa-star yellow" aria-hidden="true"></i>
-                        <i className="fa fa-star yellow" aria-hidden="true"></i>
-                        <i className="fa fa-star yellow" aria-hidden="true"></i>
-                        <i className="fa fa-star yellow" aria-hidden="true"></i>
-                        <i className="fa fa-star" aria-hidden="true"></i>
-
-                      </div>
-                    </div>
-
-                  <div className="center">
-                    <div className="button-transparent"><div className="bg"></div><div className="text">Explore places in Barcelona</div></div>
-                  </div>
-                  <div className="bottom">
-
-                    <div className="main-text">
-                      <i className="fa fa-ticket" aria-hidden="true"></i> You are one click away from trip to Barcelona. <a href="#">Buy tickets to Barcelona.</a>
-                    </div>
-                    <div className="button-transparent small"><div className="bg"></div><div className="text">Fly from Prague for $345</div></div>
-
-
-                  </div>
-
-              </div>
-            </div>
-
-            <div className="list">
-              {tilesToShow.map(tile => {
-                const isSelected = this.state.chosenTiles.some(
-                  item => item.name === tile.name,
-                )
-                  ? 'selected'
-                  : '';
-                return (
-                  <div
-                    className={`tile ${tile.nameC} ${isSelected}`}
-                    key={tile.name + tile.tagQuery}
-                    onClick={() => {
-                      this.toggleTile(tile);
-                    }}
-                  >
-                    <div className="gradient-layer" />
-                    <div className="icon" />
-                    <div className="name">{tile.name}</div>
-
-                  </div>
-                );
-              })}
-            </div>
+            {/*<Search applySearch={this.handleSearch} />*/}
+            <Route path="/cities-list" component={CitiesPreviewList} />
           </div>
         </div>
       </div>
