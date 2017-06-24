@@ -13,10 +13,16 @@ class App extends Component {
       data: [],
     };
     this.tiles = [
+
       {
-        name: 'Skateboarding',
-        tagQuery: 'skateboard',
-        nameC: 'skateboarding',
+        name: 'Good food',
+        tagQuery: 'food',
+        nameC: 'food',
+      },
+      {
+        name: 'Bars / pubs',
+        tagQuery: 'bar',
+        nameC: 'bar',
       },
       {
         name: 'Diving',
@@ -29,9 +35,24 @@ class App extends Component {
         nameC: 'surfing',
       },
       {
+        name: 'Beach',
+        tagQuery: 'beach',
+        nameC: 'beach',
+      },
+      {
+        name: 'Spa / massages',
+        tagQuery: 'spa|massages',
+        nameC: 'massages',
+      },
+      {
         name: 'Hiking',
         tagQuery: 'hiking',
         nameC: 'hiking',
+      },
+      {
+        name: 'Skateboarding',
+        tagQuery: 'skateboard',
+        nameC: 'skateboarding',
       },
       {
         name: 'Horse riding',
@@ -131,22 +152,29 @@ class App extends Component {
             <div className="title">Where do you wanna go?</div>
             <div className="location">
               <div className="place">
-                <i className="fa fa-globe" aria-hidden="true" />
-                Literally anywhere.
+                <i className="fa fa-globe" aria-hidden="true" /> Literally anywhere.
               </div>
-              <div className="button--link">change</div>
+              <div className="button--link">choose some</div>
             </div>
 
-            <div className="title">What's important to you?</div>
+            <div className="title">What will you enjoy on your trip?</div>
 
             {this.state.chosenTiles.map(tile =>
-              <div className="interest" key={tile.tagQuery + tile.name}>
-                <div className="name">{tile.name}</div>
+              <div className={`interest ${tile.nameC}`} key={tile.tagQuery + tile.name}>
+                <div className="name">
+                  <div className="interest-icon"></div>
+                  {tile.name}
+                </div>
                 <div className="icon" onClick={() => this.removeTile(tile)}>
                   <i className="fa fa-times" aria-hidden="true" />
                 </div>
               </div>,
             )}
+
+            {this.state.chosenTiles.length == 0 ? (
+               <div className="empty-state">Select some activities. <i className="fa fa-arrow-right" aria-hidden="true"></i> <i className="fa fa-arrow-right" aria-hidden="true"></i> <i className="fa fa-arrow-right" aria-hidden="true"></i>
+                 <br/><br/>Or you can stay home and enjoy photos from your last trip. :-)</div>
+            ):null}
 
             <div className="button--huge">
               <div className="count">
