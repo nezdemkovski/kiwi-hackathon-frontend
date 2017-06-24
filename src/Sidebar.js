@@ -45,13 +45,7 @@ class Sidebar extends Component {
               last trip. :-)
             </div>
           : null}
-        <Link to="/cities-list">
-          <a href="#">
-            <i className="fa fa-chevron-left" aria-hidden="true" />
-            {' '}
-            Show cities
-          </a>
-        </Link>
+
         <div className="button--huge">
           <div className="count">
             <CitiesCount
@@ -65,6 +59,12 @@ class Sidebar extends Component {
           <div className="">
             places that match your needs
           </div>
+            <Link to="/cities-list">
+                <div className="button-transparent small">
+                    <div className="bg" />
+                    <div className="text">Show matched cities </div>
+                </div>
+            </Link>
         </div>
       </div>
     );
