@@ -52,7 +52,7 @@ class App extends Component {
         name: 'Dolphin swimming',
         tagQuery: 'dolphin',
         nameC: 'dolphin',
-      }
+      },
     ];
   }
   getData = () => {
@@ -188,7 +188,7 @@ class App extends Component {
               })}
             </div>
           </div>
-        </div>;
+        </div>
       </div>
     );
   }
