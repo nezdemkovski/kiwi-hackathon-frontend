@@ -42,7 +42,7 @@ class Sidebar extends Component {
               <div className="interest-icon" />
               {tile.name}
             </div>
-            <div className="icon" onClick={() => this.removeTile(tile)}>
+            <div className="icon" onClick={() => this.props.removeTile(tile)}>
               <i className="fa fa-times" aria-hidden="true" />
             </div>
           </div>,
@@ -72,12 +72,14 @@ class Sidebar extends Component {
           <div className="">
             places that match your needs
           </div>
+          {!!this.props.chosenTiles.length &&
             <Link to="/cities-list">
-                <div className="button-transparent small">
-                    <div className="bg" />
-                    <div className="text">Show matched cities </div>
-                </div>
-            </Link>
+              <div className="button-transparent small">
+                <div className="bg" />
+                <div className="text">Show matched cities </div>
+              </div>
+            </Link>}
+
         </div>
       </div>
     );

@@ -5,6 +5,7 @@ class CitiesPreviewList extends Component {
   render() {
     return (
       <div className="cities">
+        {/*{this.props.data}*/}
         <div className="city barcelona">
           <div className="map" />
           <div className="gradient-layer-map" />
