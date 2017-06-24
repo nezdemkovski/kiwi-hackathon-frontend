@@ -15,26 +15,33 @@ class App extends Component {
       {
         name: 'Skateboarding',
         tagQuery: 'skateboard',
+        nameC: 'skateboarding',
       },
       {
         name: 'Diving',
         tagQuery: 'diving',
+        nameC: 'diving',
       },
       {
         name: 'Surfing',
         tagQuery: 'surfing',
+        nameC: 'surfing',
       },
       {
         name: 'Hiking',
         tagQuery: 'hiking',
+        nameC: 'hiking',
       },
       {
         name: 'Horse riding',
         tagQuery: 'Horse%20Riding',
+        nameC: 'horse-riding',
+
       },
       {
         name: 'Sailing',
         tagQuery: 'sailing',
+        nameC: 'sailing',
       },
     ];
   }
@@ -150,13 +157,16 @@ class App extends Component {
             <div className="list">
               {this.tiles.map(tile =>
                 <div
-                  className="tile"
+                  className={`tile ${tile.nameC}`}
                   key={tile.name + tile.tagQuery}
                   onClick={() => {
                     this.chooseTile(tile);
                   }}
                 >
-                  {tile.name}
+                  <div className="gradient-layer"></div>
+                  <div className="icon"></div>
+                  <div className="name">{tile.name}</div>
+
                 </div>,
               )}
             </div>
