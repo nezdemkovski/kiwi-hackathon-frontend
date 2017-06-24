@@ -37,7 +37,6 @@ class App extends Component {
         name: 'Horse riding',
         tagQuery: 'Horse%20Riding',
         nameC: 'horse-riding',
-
       },
       {
         name: 'Sailing',
@@ -53,7 +52,7 @@ class App extends Component {
         name: 'Dolphin swimming',
         tagQuery: 'dolphin',
         nameC: 'dolphin',
-      }
+      },
     ];
   }
   getData = () => {
@@ -119,11 +118,10 @@ class App extends Component {
     const noCitiesToShow =
       !this.state.chosenTags.length ||
       !this.state.data ||
-      !this.state.data.length;
+      !this.state.data.total;
     const tilesToShow = this.state.query
       ? this.tiles.filter(tile => tile.name.match(re))
       : this.tiles;
-
     return (
       <div className="App">
         <div className="container">
@@ -153,7 +151,9 @@ class App extends Component {
             <div className="button--huge">
               <div className="count">
                 <CitiesCount
-                  count={noCitiesToShow ? '0' : `${this.state.data.length}`}
+                  count={
+                    noCitiesToShow ? '1,634,573' : `${this.state.data.total}`
+                  }
                 />
               </div>
               <div className="">
@@ -165,23 +165,30 @@ class App extends Component {
           <div className="column--right">
             <Search applySearch={this.handleSearch} />
             <div className="list">
-              {tilesToShow.map(tile =>
-                <div
-                  className={`tile ${tile.nameC}`}
-                  key={tile.name + tile.tagQuery}
-                  onClick={() => {
-                    this.toggleTile(tile);
-                  }}
-                >
-                  <div className="gradient-layer"></div>
-                  <div className="icon"></div>
-                  <div className="name">{tile.name}</div>
+              {tilesToShow.map(tile => {
+                const isSelected = this.state.chosenTiles.some(
+                  item => item.name === tile.name,
+                )
+                  ? 'selected'
+                  : '';
+                return (
+                  <div
+                    className={`tile ${tile.nameC} ${isSelected}`}
+                    key={tile.name + tile.tagQuery}
+                    onClick={() => {
+                      this.toggleTile(tile);
+                    }}
+                  >
+                    <div className="gradient-layer" />
+                    <div className="icon" />
+                    <div className="name">{tile.name}</div>
 
-                </div>,
-              )}
+                  </div>
+                );
+              })}
             </div>
           </div>
-        </div>;
+        </div>
       </div>
     );
   }
