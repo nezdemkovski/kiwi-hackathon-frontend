@@ -167,11 +167,11 @@ class App extends Component {
           <div className="column--right">
 
             <Route
-                exact
-                path="/"
-                render={() => {
-                  return <div className="placeholder" />;
-                }}
+              exact
+              path="/"
+              render={() => {
+                return <div className="placeholder" />;
+              }}
             />
 
             <Route
@@ -208,7 +208,11 @@ class App extends Component {
             {/*<Search applySearch={this.handleSearch} />*/}
             <Route
               path="/cities-list"
-              render={() => <CitiesPreviewList data={this.state.data} />}
+              render={() =>
+                <CitiesPreviewList
+                  activitiesCount={this.state.chosenTiles.length}
+                  data={this.state.data}
+                />}
             />
           </div>
         </div>

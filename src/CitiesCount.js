@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class CitiesCount extends Component {
   constructor(props) {
     super(props);
-    this.chars = '0123456789';
+    this.chars = '456789';
     this.state = {
       count: this.props.count,
     };

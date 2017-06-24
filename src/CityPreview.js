@@ -13,7 +13,8 @@ class CitiesPreview extends Component {
           <div className="info">
             <div className="title">{this.props.city.city} </div>
             <div className="description">
-              You can enjoy {this.props.city.places.length} places based on 5 of
+              You can enjoy {this.props.city.places.length} places based on{' '}
+              {this.props.activitiesCount} of
               your
               preferred activities in {' '}
               {this.props.city.city}.
