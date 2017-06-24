@@ -11,14 +11,20 @@
     "react-dom": "^15.6.1"
   },
   "devDependencies": {
-    "prettier": "^1.4.4",
-    "react-scripts": "1.0.7"
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^3.0.0",
+    "react-scripts": "1.0.7",
+    "prettier": "^1.4.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
+    "style": "gulp",
+    "style:build": "gulp build",
     "prettier": "prettier --single-quote --trailing-comma all --write '**/*.js'"
   }
 }
