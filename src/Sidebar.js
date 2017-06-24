@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import CitiesCount from './CitiesCount';
+import { Link } from 'react-router-dom';
 
 class Sidebar extends Component {
   render() {
     return (
       <div className="column--left">
-        <div className="logo" />
-
+        <Link to="/">
+          <div className="logo" />
+        </Link>
         <div className="title">Where do you wanna go?</div>
         <div className="location">
           <div className="place">
@@ -43,7 +45,13 @@ class Sidebar extends Component {
               last trip. :-)
             </div>
           : null}
-
+        <Link to="/cities-list">
+          <a href="#">
+            <i className="fa fa-chevron-left" aria-hidden="true" />
+            {' '}
+            Show cities
+          </a>
+        </Link>
         <div className="button--huge">
           <div className="count">
             <CitiesCount
