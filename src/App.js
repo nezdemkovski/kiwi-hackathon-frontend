@@ -32,7 +32,7 @@ class App extends Component {
       },
       {
         name: 'Sightseeings',
-        tagQuery: 'sightseings',
+        tagQuery: 'historical',
         nameC: 'sightseeings',
       },
       {
