@@ -31,10 +31,9 @@ class Sidebar extends Component {
           <div className="button--link">choose some</div>
         </div>
 
-          {this.props.chosenTiles.length !== 0
-              ? <div className="title">What will you enjoy on your trip?</div>
-              : null}
-
+        {this.props.chosenTiles.length !== 0
+          ? <div className="title">What will you enjoy on your trip?</div>
+          : null}
 
         {this.props.chosenTiles.map(tile =>
           <div
@@ -53,9 +52,9 @@ class Sidebar extends Component {
 
         <div className="button--huge">
 
-            {this.props.chosenTiles.length === 0
-                ? <div>In the world is approx.</div>
-                : <div>In the world is exactly</div>}
+          {this.props.chosenTiles.length === 0
+            ? <div>In the world is approx.</div>
+            : <div>In the world is exactly</div>}
           <div className="count">
             <CitiesCount
               count={
@@ -65,21 +64,27 @@ class Sidebar extends Component {
               }
             />
           </div>
-              {this.props.chosenTiles.length === 0
-                  ? <div>that can match your needs. Uff.<br/><br/>We'll choose the best ones for you.</div>
-                  : <div>that match your needs.</div>}
+          {this.props.chosenTiles.length === 0
+            ? <div>
+                that can match your needs. Uff.<br /><br />We'll choose the best
+                ones for you.
+              </div>
+            : <div>that match your needs.</div>}
 
-            {this.props.chosenTiles.length === 0
-                ? <div className="empty-state">
-                <br/><br/>Tell us what you want to enjoy {'     '}<i className="fa fa-arrow-right" aria-hidden="true" />
-            </div>
-                : <Link to="/cities-list">
+          {this.props.chosenTiles.length === 0
+            ? <div className="empty-state">
+                <br /><br />Tell us what you want to enjoy {'     '}
+                <i className="fa fa-arrow-right" aria-hidden="true" />
+              </div>
+            : <Link to="/cities-list">
                 <div className="button-transparent">
-                    <div className="bg" />
-                    <div className="text">Show these places <i className="fa fa-chevron-right" aria-hidden="true"></i>
-                    </div>
+                  <div className="bg" />
+                  <div className="text">
+                    Show these places{' '}
+                    <i className="fa fa-chevron-right" aria-hidden="true" />
+                  </div>
                 </div>
-            </Link>}
+              </Link>}
 
         </div>
       </div>
