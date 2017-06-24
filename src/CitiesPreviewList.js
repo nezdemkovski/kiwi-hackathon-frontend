@@ -5,11 +5,13 @@ class CitiesPreviewList extends Component {
   render() {
     console.log(this.props.data);
     const cities = Object.keys(this.props.data.cities).map(key => {
-      return this.props.data.cities[key];
+      return { city: key, ...this.props.data.cities[key] };
     });
     return (
       <div className="cities">
-        {cities.map(city => <CityPreview key={city.id} city={city} />)}
+        {cities.map((city, index) =>
+          <CityPreview key={`${city.id}-${index}`} city={city} />,
+        )}
       </div>
     );
   }

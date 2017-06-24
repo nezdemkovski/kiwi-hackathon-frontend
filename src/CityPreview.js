@@ -13,8 +13,10 @@ class CitiesPreview extends Component {
           <div className="info">
             <div className="title">{this.props.city.city} </div>
             <div className="description">
-              You can enjoy 3 from 5 of your preferred activities in
-              Barcelona.
+              You can enjoy {this.props.city.places.length} places based on 5 of
+              your
+              preferred activities in {' '}
+              {this.props.city.city}.
             </div>
           </div>
 
@@ -31,7 +33,9 @@ class CitiesPreview extends Component {
         <div className="center">
           <div className="button-transparent">
             <div className="bg" />
-            <div className="text">Explore activities in Barcelona</div>
+            <div className="text">
+              Explore activities in {this.props.city.city}
+            </div>
           </div>
         </div>
         <div className="bottom">
@@ -39,7 +43,8 @@ class CitiesPreview extends Component {
           <div className="main-text">
             <i className="fa fa-ticket" aria-hidden="true" /> You are one
             click away
-            from trip to Barcelona. <a href="#">Buy tickets to Barcelona.</a>
+            from trip to {this.props.city.city}
+            . <a href="#">Buy tickets to {this.props.city.city}.</a>
           </div>
           <div className="button-transparent small">
             <div className="bg" />
