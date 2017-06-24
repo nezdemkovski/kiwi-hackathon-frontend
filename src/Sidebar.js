@@ -59,7 +59,7 @@ class Sidebar extends Component {
             <CitiesCount
               count={
                 this.props.noCitiesToShow
-                  ? this.props.chosenTiles.length ? '0' : '1,634,573'
+                  ? this.props.chosenTiles.length ? '15' : '1,634,573'
                   : `${this.props.total}`
               }
             />
