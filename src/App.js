@@ -128,7 +128,7 @@ class App extends Component {
       <div className="App">
         <div className="container">
           <div className="column--left">
-            <div className="logo">TripMix</div>
+            <div className="logo"></div>
 
             <div className="title">Where do you wanna go?</div>
             <div className="location">

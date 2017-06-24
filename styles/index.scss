@@ -25,6 +25,16 @@ $color--background: #161E25;
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#07433c', endColorstr='#000000',GradientType=1 );
 }
 
+
+@mixin gradient-yellow {
+  background: rgba(255,226,0,0.58);
+  background: -moz-linear-gradient(-45deg, rgba(255,226,0,0.58) 0%, rgba(0,0,0,1) 100%);
+  background: -webkit-linear-gradient(-45deg, rgba(255,226,0,0.58) 0%,rgba(0,0,0,1) 100%);
+  background: linear-gradient(135deg, rgba(255,226,0,0.58) 0%,rgba(0,0,0,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#FFE200', endColorstr='#FFE200',GradientType=1 );
+}
+
+
 body {
   font-size: 14px;
   margin: 0;
@@ -120,7 +130,7 @@ body {
    
   }
   .tile {
-    margin: 15px 0 15px 15px;
+    margin: 15px 0 0px 15px;
     width: 250px;
     height: 250px;
     float: left;
@@ -173,11 +183,21 @@ body {
       background-size: 80px;
     }
 
+
+
+    &.selected {
+      .gradient-layer {
+        @include gradient-yellow
+
+      }
+    }
+
     &.skateboarding {
       background-image: url(../images/bg-skateboard.jpg);
 
       .icon {
-        background-image: url(../images/icon-hiking.png);
+        background-image: url(../images/icon-skateboarding.png);
+        background-position: 0 20px;
       }
     }
 
@@ -186,6 +206,8 @@ body {
 
       .icon {
         background-image: url(../images/icon-diving.png);
+        background-size: 70px;
+        left: 90px;
       }
     }
 
