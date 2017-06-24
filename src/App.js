@@ -172,7 +172,7 @@ class App extends Component {
             )}
 
             {this.state.chosenTiles.length == 0 ? (
-               <div className="empty-state">Select some activities. <i className="fa fa-arrow-right" aria-hidden="true"></i> <i className="fa fa-arrow-right" aria-hidden="true"></i> <i className="fa fa-arrow-right" aria-hidden="true"></i>
+               <div className="empty-state">Nothing here... :(<br/><br/><span>Select some activities. <i className="fa fa-arrow-right" aria-hidden="true"></i> <i className="fa fa-arrow-right" aria-hidden="true"></i> <i className="fa fa-arrow-right" aria-hidden="true"></i></span>
                  <br/><br/>Or you can stay home and enjoy photos from your last trip. :-)</div>
             ):null}
 
@@ -192,6 +192,44 @@ class App extends Component {
 
           <div className="column--right">
             <Search applySearch={this.handleSearch} />
+
+            <div className="cities">
+              <div className="city barcelona">
+                <div className="map"></div>
+                  <div className="gradient-layer-map"></div>
+
+                    <div className="top">
+                      <div className="info">
+                        <div className="title">Barcelona, Spain</div>
+                        <div className="description">You can enjoy 3 from 5 of your preferred activities in Barcelona.</div>
+                      </div>
+
+                      <div className="rating">
+                        <i className="fa fa-star yellow" aria-hidden="true"></i>
+                        <i className="fa fa-star yellow" aria-hidden="true"></i>
+                        <i className="fa fa-star yellow" aria-hidden="true"></i>
+                        <i className="fa fa-star yellow" aria-hidden="true"></i>
+                        <i className="fa fa-star" aria-hidden="true"></i>
+
+                      </div>
+                    </div>
+
+                  <div className="center">
+                    <div className="button-transparent"><div className="bg"></div><div className="text">Explore places in Barcelona</div></div>
+                  </div>
+                  <div className="bottom">
+
+                    <div className="main-text">
+                      <i className="fa fa-ticket" aria-hidden="true"></i> You are one click away from trip to Barcelona. <a href="#">Buy tickets to Barcelona.</a>
+                    </div>
+                    <div className="button-transparent small"><div className="bg"></div><div className="text">Fly from Prague for $345</div></div>
+
+
+                  </div>
+
+              </div>
+            </div>
+
             <div className="list">
               {tilesToShow.map(tile => {
                 const isSelected = this.state.chosenTiles.some(

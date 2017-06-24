@@ -27,10 +27,10 @@ $color--background: #161E25;
 
 
 @mixin gradient-yellow {
-  background: rgba(126, 49, 162,0.58);
-  background: -moz-linear-gradient(-45deg, rgba(126, 49, 162,0.58) 0%, rgba(0,0,0,1) 100%);
-  background: -webkit-linear-gradient(-45deg, rgba(126, 49, 162,0.58) 0%,rgba(0,0,0,1) 100%);
-  background: linear-gradient(135deg, rgba(126, 49, 162,0.58) 0%,rgba(0,0,0,1) 100%);
+  background: rgba(48,35,174,0.58);
+  background: -moz-linear-gradient(-45deg, rgba(126, 49, 162,0.58) 0%, rgba(48,35,174,1) 100%);
+  background: -webkit-linear-gradient(-45deg, rgba(126, 49, 162,0.58) 0%,rgba(48,35,174,1) 100%);
+  background: linear-gradient(135deg, rgba(126, 49, 162,0.58) 0%,rgba(48,35,174,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7E31A2', endColorstr='#FFE200',GradientType=1 );
 }
 
@@ -66,14 +66,13 @@ body {
 
   .empty-state {
     margin: 15px;
-    padding: 15px 15px 140px;
     color: $color--accent;
     font-weight: 600;
-    border: dotted 1px $color--accent;
-    background-image: url(../images/pictures.png);
-    background-repeat: no-repeat;
-    background-size: 80px;
-    background-position: center 110px;
+
+    span {
+      color: white;
+      font-size: 18px;
+    }
   }
 
   .location {
@@ -91,79 +90,7 @@ body {
     font-size: 14px;
     padding: 0 15px;
   }
-  
-  .interest {
-    background-color: darken($color--primary,20%);
-    height: 40px;
-    line-height: 40px;
-    color: #fff;
-    padding: 0 15px;
-    display: flex;
-    justify-content: space-between;
-    margin: 5px 0 0;
-    @include gradient-yellow;
 
-    .interest-icon {
-      float: left;
-      width: 30px;
-      height: 40px;
-      background-size: 25px;
-      background-repeat: no-repeat;
-      background-position: center left;
-    }
-
-    &.skateboarding {
-
-      .interest-icon {
-        background-image: url(../images/icon-skateboarding.png);
-      }
-    }
-
-    &.diving {
-      .interest-icon {
-        background-image: url(../images/icon-diving.png);
-        background-size: 20px;
-      }
-    }
-
-    &.surfing {
-      .interest-icon {
-        background-image: url(../images/icon-surfing.png);
-      }
-    }
-
-    &.hiking {
-      .interest-icon {
-        background-image: url(../images/icon-hiking.png);
-      }
-    }
-
-    &.horse-riding {
-      .interest-icon {
-        background-image: url(../images/icon-horseriding.png);
-      }
-    }
-
-    &.sailing {
-      .interest-icon {
-        background-image: url(../images/icon-sailing.png);
-      }
-    }
-
-    &.dolphin {
-      .interest-icon {
-        background-image: url(../images/icon-dolphin.png);
-      }
-
-    }
-    &.kayaking {
-      .interest-icon {
-        background-image: url(../images/icon-kayaking.png);
-      }
-    }
-
-
-  }
 
   
   .icon {
@@ -174,6 +101,79 @@ body {
     }
   }
   
+}
+
+.interest {
+  background-color: darken($color--primary,20%);
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0 0;
+  @include gradient-yellow;
+
+  .interest-icon {
+    float: left;
+    width: 30px;
+    height: 40px;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: center left;
+  }
+
+  &.skateboarding {
+
+    .interest-icon {
+      background-image: url(../images/icon-skateboarding.png);
+    }
+  }
+
+  &.diving {
+    .interest-icon {
+      background-image: url(../images/icon-diving.png);
+      background-size: 20px;
+    }
+  }
+
+  &.surfing {
+    .interest-icon {
+      background-image: url(../images/icon-surfing.png);
+    }
+  }
+
+  &.hiking {
+    .interest-icon {
+      background-image: url(../images/icon-hiking.png);
+    }
+  }
+
+  &.horse-riding {
+    .interest-icon {
+      background-image: url(../images/icon-horseriding.png);
+    }
+  }
+
+  &.sailing {
+    .interest-icon {
+      background-image: url(../images/icon-sailing.png);
+    }
+  }
+
+  &.dolphin {
+    .interest-icon {
+      background-image: url(../images/icon-dolphin.png);
+    }
+
+  }
+  &.kayaking {
+    .interest-icon {
+      background-image: url(../images/icon-kayaking.png);
+    }
+  }
+
+
 }
 
 .button--link {
@@ -429,5 +429,131 @@ button:focus {
   }
 }
 
+
+.cities {
+  .city {
+    background: #222;
+    padding: 25px;
+    height: 380px;
+    border-radius: 4px;
+    overflow:hidden;
+    position: relative;
+    color: #fff;
+    margin: 15px;
+
+
+    .top {
+      display: flex;
+      z-index: 5;
+      position: relative;
+      justify-content: space-between;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+
+      .info {
+        .title {
+          font-size: 32px;
+          font-weight: 700;
+
+        }
+      }
+
+      .rating {
+        font-size: 28px;
+        letter-spacing: 6px;
+
+        .yellow {
+          color: #FFE200;
+        }
+      }
+    }
+
+    .bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 15px 25px;
+      @include gradient;
+      display: flex;
+      justify-content: space-between;
+      z-index: 5;
+
+      a {
+        color: #fff;
+      }
+
+      .main-text {
+        padding: 5px 0;
+      }
+    }
+
+    .map {
+      position: absolute;
+      top: 0; bottom: 0; left: 0; right: 0;
+      z-index: 1;
+    }
+
+    .gradient-layer-map {
+      @include gradient-2;
+      position: absolute;
+      top: 0; bottom: 0; left: 0; right: 0;
+      z-index: 2;
+    }
+
+    &.barcelona {
+      .map {
+        background-image: url(../images/map-barcelona.png);
+        background-repeat:no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+
+}
+
+.center {
+  text-align: center;
+}
+
+.button-transparent {
+  display: inline-block;
+  border: 1px solid #B656E4;
+  padding: 15px 30px;
+  font-size: 22px;
+  border-radius: 4px;
+  color: white;
+  margin: 50px auto;
+  position: relative;
+  cursor: pointer;
+  overflow:hidden;
+  z-index: 50;
+
+  .bg {
+    transition: ease-in-out 0.2s all;
+
+    @include gradient-yellow;
+    opacity: 0.6;
+    z-index: 5;
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+  }
+
+  .text {
+    position: relative;
+    z-index: 10;
+  }
+
+  &:hover {
+    .bg {
+      opacity: 0.9;
+    }
+  }
+
+  &.small {
+    padding: 5px 10px;
+    font-size: 14px;
+    margin: 0;
+  }
+}
 
 
