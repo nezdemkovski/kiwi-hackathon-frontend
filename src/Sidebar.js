@@ -28,7 +28,7 @@ class Sidebar extends Component {
             <i className="fa fa-globe" aria-hidden="true" /> Literally
             anywhere.
           </div>
-          <div className="button--link">choose some</div>
+          <div className="button--link">specify place</div>
         </div>
 
         {this.props.chosenTiles.length !== 0
@@ -49,6 +49,19 @@ class Sidebar extends Component {
             </div>
           </div>,
         )}
+
+          <Route
+              path="/cities-list"
+              render={() => {
+                  return <div className="center margin10">
+                      <Link to="/"><div className="button-transparent small">
+                          <div className="bg" />
+                          <div className="text">Edit activities</div>
+                      </div>
+                          </Link>
+                  </div>;
+              }}
+          />
 
         <div className="button--huge">
 
