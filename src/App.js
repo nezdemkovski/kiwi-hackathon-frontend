@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CitiesCount from './CitiesCount';
+import Search from './Search';
 import './static/css/index.css';
 
 class App extends Component {
@@ -61,7 +62,7 @@ class App extends Component {
         return response.json();
       })
       .then(result => {
-        console.log(result);
+        console.log('response:', result);
         this.setState({ data: result });
       });
   };
@@ -71,21 +72,22 @@ class App extends Component {
     });
   };
   removeTag = tag => {
-    console.log(tag);
     this.setState(
       {
         chosenTags: this.state.chosenTags.filter(item => item !== tag),
       },
       () => {
-        console.log(this.state.chosenTags);
+        console.log('chosen tags: ', this.state.chosenTags);
         this.getData();
       },
     );
   };
-  chooseTile = tile => {
+  toggleTile = tile => {
     if (!this.state.chosenTiles.some(item => item.name === tile.name)) {
       this.setState({ chosenTiles: [...this.state.chosenTiles, tile] });
       this.addTag(tile.tagQuery);
+    } else {
+      this.removeTile(tile);
     }
   };
   removeTile = tile => {
@@ -96,12 +98,22 @@ class App extends Component {
     });
     this.removeTag(tile.tagQuery);
   };
+  handleSearch = e => {
+    e.preventDefault();
+    this.setState({ query: e.target.value });
+  };
+
   render() {
-    console.log(this.state.data);
+    const re = RegExp(this.state.query, 'i');
+
     const noCitiesToShow =
       !this.state.chosenTags.length ||
       !this.state.data ||
       !this.state.data.length;
+    const tilesToShow = this.state.query
+      ? this.tiles.filter(tile => tile.name.match(re))
+      : this.tiles;
+
     return (
       <div className="App">
         <div className="container">
@@ -141,26 +153,14 @@ class App extends Component {
           </div>
 
           <div className="column--right">
-            <div className="search">
-              <form>
-                <label>
-                  <i className="fa fa-search" aria-hidden="true" />
-
-                  <input
-                    type="text"
-                    placeholder="Diving, beach, hiking, party, ..."
-                  />
-                </label>
-              </form>
-            </div>
-
+            <Search applySearch={this.handleSearch} />
             <div className="list">
-              {this.tiles.map(tile =>
+              {tilesToShow.map(tile =>
                 <div
                   className={`tile ${tile.nameC}`}
                   key={tile.name + tile.tagQuery}
                   onClick={() => {
-                    this.chooseTile(tile);
+                    this.toggleTile(tile);
                   }}
                 >
                   <div className="gradient-layer"></div>
