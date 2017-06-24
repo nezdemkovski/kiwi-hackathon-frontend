@@ -1,0 +1,139 @@
+/**
+ * index.scss
+ * - Add any styles you want here!
+ */
+
+$color--primary: #0E8E94;
+$color--accent: #FFE200;
+$color--background: #161E25;
+
+body {
+  background: #f5f5f5;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: $color--background;
+
+}
+
+* { box-sizing: border-box; }
+
+
+.container {
+  background-color: #0E8E94;
+  margin: 0px auto;
+}
+
+.column--left {
+  width: 25%;
+  position: fixed;
+  height: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+  top:0;
+  left:0;
+  background-color: $color--primary;
+background: -moz-linear-gradient(-45deg, $color--primary 0%, #063e34 100%);
+background: -webkit-linear-gradient(-45deg, $color--primary 0%,#063e34 100%);
+background: linear-gradient(135deg, $color--primary 0%,#063e34 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color--primary', endColorstr='#063e34',GradientType=1 );
+  
+  .location {
+      padding: 15px;
+    color: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .title {
+    color: $color--accent;
+    font-size: 700;
+    margin-top: 40px;
+    font-size: 14px;
+    padding: 0 15px;
+  }
+  
+  .interest {
+    background-color: darken($color--primary,20%);
+    height: 40px;
+    line-height: 40px;
+    color: #fff;
+    padding: 0 15px;
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0 0;
+  }
+  
+
+  
+  .icon {
+    cursor: pointer;
+    
+    &:hover {
+      color: $color--accent;
+    }
+  }
+  
+}
+
+.button--link {
+  text-decoration: underline;
+  cursor: pointer;
+  
+  &:hover {
+    color: $color--accent;
+  }
+}
+
+.column--right {
+  width: 75%;
+  background-color: $color--background;
+  padding: 15px;
+  margin-left: 25%;
+  
+  .search {
+    margin: 15px;
+    border-bottom: 1px solid $color--primary;
+  
+    input {
+      border: 0;
+    }
+  }
+  
+  .list {
+   
+  }
+  .tile {
+    margin: 15px 0 15px 15px;
+    width: 250px;
+    height: 250px;
+    float: left;
+    background: gray;
+    padding: 15px;
+  }
+}
+
+.logo {
+  font-family: 'Baloo', cursive;
+  font-size: 24px;
+  color: #fff;
+  margin: 15px;
+  border-bottom: 1px solid $color--primary;
+}
+
+.button--huge {
+  padding: 100px 15px 15px;
+  background-color: darken($color--primary,20%);
+  color: #fff;
+  margin-top: 30px;
+
+  .count {
+    font-weight: 800;
+    font-size: 36px;
+  }
+}
+
+
+

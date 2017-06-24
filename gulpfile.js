@@ -7,11 +7,13 @@ var sourcemaps = require('gulp-sourcemaps');
 gulp.task('default', ['sass', 'watch']);
 gulp.task('build', ['sass']);
 
-gulp.task('sass', function () {
-  return gulp.src('styles/front.scss').pipe(sourcemaps.init())
-    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+gulp.task('sass', function() {
+  return gulp
+    .src('styles/index.scss')
+    .pipe(sourcemaps.init())
+    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
     .pipe(sourcemaps.write('../css'))
-    .pipe(gulp.dest('./static/css'));
+    .pipe(gulp.dest('./src/static/css'));
 });
 
 gulp.task('watch', function() {

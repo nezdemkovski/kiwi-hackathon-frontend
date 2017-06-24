@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
-import './CitiesCount.css';
 
 class CitiesCount extends Component {
   constructor(props) {
     super(props);
-    this.chars = '0123456789';
+    this.chars = '010101';
     this.state = {
-      number: '200',
+      count: this.props.count,
     };
   }
   setRandom = () => {
     this.setText(`${Math.floor(Math.random() * 4000)}`);
   };
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.count !== this.props.count) {
+      this.setText(this.props.count);
+    }
+  }
   setText = newText => {
-    const oldText = this.state.number;
+    const oldText = this.state.count;
     const length = Math.max(oldText.length, newText.length);
     const promise = new Promise(resolve => (this.resolve = resolve));
     this.queue = [];
@@ -47,7 +51,7 @@ class CitiesCount extends Component {
         output += from;
       }
     }
-    this.setState({ number: output });
+    this.setState({ count: output });
     if (complete === this.queue.length) {
       this.resolve();
     } else {
@@ -65,9 +69,8 @@ class CitiesCount extends Component {
         ref={node => {
           this.text = node;
         }}
-        onClick={this.setRandom}
       >
-        {this.state.number}
+        {this.state.count}
       </div>
     );
   }
