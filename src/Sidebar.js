@@ -66,12 +66,12 @@ class Sidebar extends Component {
             />
           </div>
               {this.props.chosenTiles.length === 0
-                  ? <div>that can match your needs. Uff.</div>
+                  ? <div>that can match your needs. Uff.<br/><br/>We'll choose the best ones for you.</div>
                   : <div>that match your needs.</div>}
 
             {this.props.chosenTiles.length === 0
                 ? <div className="empty-state">
-              Pick activities and find the best for you  {'     '}<i className="fa fa-arrow-right" aria-hidden="true" />
+                <br/><br/>Tell us what you want to enjoy {'     '}<i className="fa fa-arrow-right" aria-hidden="true" />
             </div>
                 : <Link to="/cities-list">
                 <div className="button-transparent">
