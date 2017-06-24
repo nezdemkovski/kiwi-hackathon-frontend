@@ -4,7 +4,7 @@
  */
 
 $color--primary: #0E8E94;
-$color--accent: #FFE200;
+$color--accent: #97C3C9;
 $color--background: #161E25;
 
 
@@ -24,6 +24,16 @@ $color--background: #161E25;
   background: linear-gradient(135deg, rgba(7,67,60,0.58) 0%,rgba(0,0,0,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#07433c', endColorstr='#000000',GradientType=1 );
 }
+
+
+@mixin gradient-yellow {
+  background: rgba(126, 49, 162,0.58);
+  background: -moz-linear-gradient(-45deg, rgba(126, 49, 162,0.58) 0%, rgba(0,0,0,1) 100%);
+  background: -webkit-linear-gradient(-45deg, rgba(126, 49, 162,0.58) 0%,rgba(0,0,0,1) 100%);
+  background: linear-gradient(135deg, rgba(126, 49, 162,0.58) 0%,rgba(0,0,0,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7E31A2', endColorstr='#FFE200',GradientType=1 );
+}
+
 
 body {
   font-size: 14px;
@@ -54,6 +64,18 @@ body {
 
   @include gradient;
 
+  .empty-state {
+    margin: 15px;
+    padding: 15px 15px 140px;
+    color: $color--accent;
+    font-weight: 600;
+    border: dotted 1px $color--accent;
+    background-image: url(../images/pictures.png);
+    background-repeat: no-repeat;
+    background-size: 80px;
+    background-position: center 110px;
+  }
+
   .location {
       padding: 15px;
     color: #fff;
@@ -78,7 +100,69 @@ body {
     padding: 0 15px;
     display: flex;
     justify-content: space-between;
-    margin: 15px 0 0;
+    margin: 5px 0 0;
+    @include gradient-yellow;
+
+    .interest-icon {
+      float: left;
+      width: 30px;
+      height: 40px;
+      background-size: 25px;
+      background-repeat: no-repeat;
+      background-position: center left;
+    }
+
+    &.skateboarding {
+
+      .interest-icon {
+        background-image: url(../images/icon-skateboarding.png);
+      }
+    }
+
+    &.diving {
+      .interest-icon {
+        background-image: url(../images/icon-diving.png);
+        background-size: 20px;
+      }
+    }
+
+    &.surfing {
+      .interest-icon {
+        background-image: url(../images/icon-surfing.png);
+      }
+    }
+
+    &.hiking {
+      .interest-icon {
+        background-image: url(../images/icon-hiking.png);
+      }
+    }
+
+    &.horse-riding {
+      .interest-icon {
+        background-image: url(../images/icon-horseriding.png);
+      }
+    }
+
+    &.sailing {
+      .interest-icon {
+        background-image: url(../images/icon-sailing.png);
+      }
+    }
+
+    &.dolphin {
+      .interest-icon {
+        background-image: url(../images/icon-dolphin.png);
+      }
+
+    }
+    &.kayaking {
+      .interest-icon {
+        background-image: url(../images/icon-kayaking.png);
+      }
+    }
+
+
   }
 
   
@@ -101,18 +185,45 @@ body {
   }
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
 .column--right {
   width: 75%;
   background-color: $color--background;
-  padding: 15px;
+  padding: 150px 15px 25px;
   margin-left: 25%;
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
   
   .search {
-    margin: 15px;
-    border-bottom: 1px solid $color--primary;
-  
+    padding: 0 25px 15px;
+    border-bottom: 3px solid $color--primary;
+    color: $color--primary;
+    position: fixed;
+    top: 0;
+    left: 25%;
+    z-index: 100;
+    right: 0;
+    background: $color--background;
+
     input {
       border: 0;
+      height: 50px;
+      width: 90%;
+      background: transparent;
+      padding: 10px;
+      font-size: 14px;
+      color:$color--primary;
+
     }
   }
   
@@ -120,7 +231,7 @@ body {
    
   }
   .tile {
-    margin: 15px 0 15px 15px;
+    margin: 15px 0 0px 15px;
     width: 250px;
     height: 250px;
     float: left;
@@ -131,7 +242,7 @@ body {
     background-size: cover;
     background-position: 25% 0;
     cursor: pointer;
-    transition: ease-in-out 0.1s all;
+    transition: ease-in-out 0.2s all;
     box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 
 
@@ -147,6 +258,7 @@ body {
       position: absolute;
       top: 0; left: 0; bottom: 0; right: 0;
       @include gradient-2;
+
     }
 
     .name {
@@ -173,11 +285,21 @@ body {
       background-size: 80px;
     }
 
+
+
+    &.selected {
+      .gradient-layer {
+        @include gradient-yellow
+
+      }
+    }
+
     &.skateboarding {
       background-image: url(../images/bg-skateboard.jpg);
 
       .icon {
-        background-image: url(../images/icon-hiking.png);
+        background-image: url(../images/icon-skateboarding.png);
+        background-position: 0 20px;
       }
     }
 
@@ -186,6 +308,8 @@ body {
 
       .icon {
         background-image: url(../images/icon-diving.png);
+        background-size: 70px;
+        left: 90px;
       }
     }
 
@@ -238,6 +362,45 @@ body {
         background-image: url(../images/icon-kayaking.png);
       }
     }
+    &.bar {
+      background-image: url(../images/bg-bar.jpg);
+
+      .icon {
+        background-image: url(../images/icon-bars.png);
+        background-size: 70px;
+        left: 90px;
+      }
+    }
+
+    &.massages {
+      background-image: url(../images/bg-massages.jpg);
+
+      .icon {
+        background-image: url(../images/icon-massages.png);
+        background-size: 70px;
+        left: 90px;
+      }
+    }
+
+    &.food{
+      background-image: url(../images/bg-food.jpg);
+
+      .icon {
+        background-image: url(../images/icon-food.png);
+        background-size: 70px;
+        left: 90px;
+      }
+    }
+
+    &.beach{
+      background-image: url(../images/bg-beach.jpg);
+
+      .icon {
+        background-image: url(../images/icon-beach.png);
+        background-size: 70px;
+        left: 90px;
+      }
+    }
   }
 }
 
@@ -246,7 +409,10 @@ body {
   font-size: 24px;
   color: #fff;
   margin: 15px;
-  border-bottom: 1px solid $color--primary;
+  background-image: url(../images/logo.png);
+  background-repeat: no-repeat;
+  height: 40px;
+  background-size: 130px;
 }
 
 .button--huge {
