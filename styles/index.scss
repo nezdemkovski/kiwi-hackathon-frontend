@@ -50,6 +50,8 @@ body {
   overflow-y: auto;
   top:0;
   left:0;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+
   @include gradient;
 
   .location {
@@ -128,29 +130,17 @@ body {
     position: relative;
     background-size: cover;
     background-position: 25% 0;
+    cursor: pointer;
+    transition: ease-in-out 0.1s all;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
 
-    &.skateboarding {
-      background-image: url(../images/bg-skateboard.jpg);
+
+    &:hover {
+      transform: scale(1.02);
     }
 
-    &.diving {
-      background-image: url(../images/bg-diving.jpg);
-    }
-
-    &.surfing {
-      background-image: url(../images/bg-surfing.jpg);
-    }
-
-    &.hiking {
-      background-image: url(../images/bg-hiking.jpeg);
-    }
-
-    &.horse-riding {
-      background-image: url(../images/bg-horseriding.jpg);
-    }
-
-    &.sailing {
-      background-image: url(../images/bg-sailing.jpg);
+    &:active {
+      transform: scale(0.98);
     }
 
     .gradient-layer {
@@ -177,11 +167,76 @@ body {
       width: 80px;
       height: 80px;
       position: absolute;
-      top: 50px;
-      left: 100px;
-      background-image: url(../images/icon-hiking.png);
+      top: 70px;
+      left: 80px;
       background-repeat: no-repeat;
       background-size: 80px;
+    }
+
+    &.skateboarding {
+      background-image: url(../images/bg-skateboard.jpg);
+
+      .icon {
+        background-image: url(../images/icon-hiking.png);
+      }
+    }
+
+    &.diving {
+      background-image: url(../images/bg-diving.jpg);
+
+      .icon {
+        background-image: url(../images/icon-diving.png);
+      }
+    }
+
+    &.surfing {
+      background-image: url(../images/bg-surfing.jpg);
+
+      .icon {
+        background-image: url(../images/icon-surfing.png);
+      }
+    }
+
+    &.hiking {
+      background-image: url(../images/bg-hiking.jpeg);
+
+      .icon {
+        background-image: url(../images/icon-hiking.png);
+      }
+    }
+
+    &.horse-riding {
+      background-image: url(../images/bg-horseriding.jpg);
+
+      .icon {
+        background-image: url(../images/icon-horseriding.png);
+      }
+    }
+
+    &.sailing {
+      background-image: url(../images/bg-sailing.jpg);
+
+
+      .icon {
+        background-image: url(../images/icon-sailing.png);
+      }
+    }
+
+    &.dolphin {
+      background-image: url(../images/bg-dolphin.jpeg);
+
+
+      .icon {
+        background-image: url(../images/icon-dolphin.png);
+      }
+
+    }
+    &.kayaking {
+      background-image: url(../images/bg-kayaking.jpeg);
+
+      .icon {
+        background-image: url(../images/icon-kayaking.png);
+      }
     }
   }
 }
