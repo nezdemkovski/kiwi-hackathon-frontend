@@ -28,10 +28,10 @@ class App extends Component {
         name: 'Hiking',
         tagQuery: 'hiking',
       },
-      // {
-      //   name: 'Watercrafting',
-      //   tagQuery: 'watercrafting',
-      // },
+      {
+        name: 'Horse riding',
+        tagQuery: 'Horse%20Riding',
+      },
       {
         name: 'Sailing',
         tagQuery: 'sailing',
