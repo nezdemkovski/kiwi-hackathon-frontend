@@ -15,7 +15,7 @@ class App extends Component {
     this.tiles = [
       {
         name: 'Skateboarding',
-        tagQuery: 'skateboard',
+        tagQuery: 'skateboard%7Cskatepark',
         nameC: 'skateboarding',
       },
       {
@@ -56,7 +56,7 @@ class App extends Component {
     ];
   }
   getData = () => {
-    const query = this.state.chosenTags.join(',');
+    const query = this.state.chosenTags.join('%7C');
     fetch(
       `https://yojri0bch0.execute-api.eu-central-1.amazonaws.com/latest/places?tags=${query}`,
       {
@@ -87,7 +87,11 @@ class App extends Component {
       },
       () => {
         console.log('chosen tags: ', this.state.chosenTags);
-        this.getData();
+        if (this.state.chosenTags.length === 0) {
+          this.setState({ data: [] });
+        } else {
+          this.getData();
+        }
       },
     );
   };
