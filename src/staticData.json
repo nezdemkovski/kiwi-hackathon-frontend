@@ -1,0 +1,513 @@
+{
+  "London": {
+    "places": [
+      {
+        "id": "poi:36160",
+        "rating": 3.5944868078781,
+        "location": {
+          "lat": 51.5044444,
+          "lng": -0.0866667
+        },
+        "name": "The Shard",
+        "city": "London",
+        "country": " United Kingdom",
+        "marker": "sightseeing:tower:lookout:observation",
+        "categories": [
+          "sightseeing"
+        ],
+        "perex": "The tallest skyscraper in the UK and the fourth tallest one in Europe."
+      }
+    ],
+    "lat": 51.5044444,
+    "lng": -0.0866667
+  },
+  "Paris": {
+    "places": [
+      {
+        "id": "poi:534",
+        "rating": 4.2596670382757,
+        "location": {
+          "lat": 48.8867725,
+          "lng": 2.3430193
+        },
+        "name": "SacrГ©-CЕ“ur Basilica",
+        "city": "Paris",
+        "country": " France",
+        "marker": "sightseeing:tower:lookout:observation",
+        "categories": [
+          "sightseeing"
+        ],
+        "perex": "The beautiful Romano-Byzantine basilica is (together with e.g. the Eiffel Tower) one of the best-known icons of the City of Lights."
+      }
+    ],
+    "lat": 48.8867725,
+    "lng": 2.3430193
+  },
+  "Prague": {
+    "places": [
+      {
+        "id": "poi:1869",
+        "rating": 2.335475287997,
+        "location": {
+          "lat": 50.0872448,
+          "lng": 14.4277564
+        },
+        "name": "Powder Tower",
+        "city": "Prague",
+        "country": " Czech Republic",
+        "marker": "sightseeing:tower:lookout:observation",
+        "categories": [
+          "sightseeing"
+        ],
+        "perex": "Powder Tower is an impressive Late Gothic tower where gunpowder used to be stored in the 17th century."
+      }
+    ],
+    "lat": 50.0872448,
+    "lng": 14.4277564
+  },
+  "New York": {
+    "places": [
+      {
+        "id": "poi:11875",
+        "rating": 3.359629877369,
+        "location": {
+          "lat": 40.7516182,
+          "lng": -73.9753613
+        },
+        "name": "Chrysler Building",
+        "city": "New York",
+        "country": " USA",
+        "marker": "sightseeing:architecture:modern",
+        "categories": [
+          "sightseeing"
+        ],
+        "perex": "An Art Deco skyscraper and one of the tallest skyscrapers in New York City."
+      }
+    ],
+    "lat": 40.7516182,
+    "lng": -73.9753613
+  },
+  "Whitechapel": {
+    "places": [
+      {
+        "id": "poi:521",
+        "rating": 2.7739739873653,
+        "location": {
+          "lat": 51.5100847,
+          "lng": -0.0859534
+        },
+        "name": "The Monument to the Great Fire of London",
+        "city": "Whitechapel",
+        "country": " United Kingdom",
+        "marker": "hiking:viewpoint",
+        "categories": [
+          "sightseeing"
+        ],
+        "perex": "This monument, built in the 1670s, commemorates the Great Fire of London which destroyed the centre of London in 1666."
+      }
+    ],
+    "lat": 51.5100847,
+    "lng": -0.0859534
+  },
+  "Barcelona": {
+    "places": [
+      {
+        "id": "poi:663",
+        "rating": 2.7212054998142,
+        "location": {
+          "lat": 41.3794365,
+          "lng": 2.1932053
+        },
+        "name": "Barceloneta Beach",
+        "city": "Barcelona",
+        "country": " Spain",
+        "marker": "sports:field:volleyball:beach",
+        "categories": [
+          "relaxing",
+          "going_out",
+          "doing_sports"
+        ],
+        "perex": "Located in the neighbourhood of the same name, this beach with fine-grained sand is popular among locals and tourists for its nightlifeвЂ¦"
+      }
+    ],
+    "lat": 41.3794365,
+    "lng": 2.1932053
+  },
+  "Puteaux": {
+    "places": [
+      {
+        "id": "poi:542",
+        "rating": 2.1296038647343,
+        "location": {
+          "lat": 48.8925647,
+          "lng": 2.2358742
+        },
+        "name": "Great Arch of Defense",
+        "city": "Puteaux",
+        "country": " France",
+        "marker": "sightseeing:architecture:modern",
+        "categories": [
+          "sightseeing"
+        ],
+        "perex": "This unique architectural marvel is the most recognizable landmark of the La DГ©fense district."
+      }
+    ],
+    "lat": 48.8925647,
+    "lng": 2.2358742
+  },
+  "Los Angeles": {
+    "places": [
+      {
+        "id": "poi:13227",
+        "rating": 1.5927435897436,
+        "location": {
+          "lat": 33.982656,
+          "lng": -118.471756
+        },
+        "name": "Venice Beach",
+        "city": "Los Angeles",
+        "country": " USA",
+        "marker": "other:emergency:police",
+        "categories": [
+          "relaxing",
+          "doing_sports"
+        ],
+        "perex": "The most visited beach in Los Angeles. It is a great place not only for sunbathing and swimming in the sea but also for taking a stroll downвЂ¦"
+      }
+    ],
+    "lat": 33.982656,
+    "lng": -118.471756
+  },
+  "San Francisco": {
+    "places": [
+      {
+        "id": "poi:12746",
+        "rating": 1.0561400966184,
+        "location": {
+          "lat": 37.7575848,
+          "lng": -122.5103698
+        },
+        "name": "Ocean Beach",
+        "city": "San Francisco",
+        "country": " USA",
+        "marker": "hiking:park:nature",
+        "categories": [
+          "relaxing",
+          "hiking",
+          "sightseeing"
+        ],
+        "perex": "The beautiful San Francisco beach is a popular destination for swimmers and surfers."
+      }
+    ],
+    "lat": 37.7575848,
+    "lng": -122.5103698
+  },
+  "Santa Monica": {
+    "places": [
+      {
+        "id": "poi:13211",
+        "rating": 0.97512931995541,
+        "location": {
+          "lat": 34.0129025,
+          "lng": -118.5008325
+        },
+        "name": "Santa Monica Bay",
+        "city": "Santa Monica",
+        "country": " USA",
+        "marker": "sports:pool:swimming",
+        "categories": [
+          "relaxing",
+          "doing_sports"
+        ],
+        "perex": "The bay is lined up with many spectacular beaches. It is a wonderful place for swimming, sunbathing and simply resting by the water."
+      }
+    ],
+    "lat": 34.0129025,
+    "lng": -118.5008325
+  },
+  "Dubai": {
+    "places": [
+      {
+        "id": "poi:22561",
+        "rating": 0.59262876254181,
+        "location": {
+          "lat": 25.179823,
+          "lng": 55.218695
+        },
+        "name": "Jumeirah Beach",
+        "city": "Dubai",
+        "country": " UAE",
+        "marker": "relaxing:beach",
+        "categories": [
+          "relaxing"
+        ],
+        "perex": "Perhaps the most popular beach in Dubai, freely accessible to public. Soak in the warm sea right by the most luxurious hotels."
+      }
+    ],
+    "lat": 25.179823,
+    "lng": 55.218695
+  },
+  "Minato": {
+    "places": [
+      {
+        "id": "poi:19955",
+        "rating": 0.7576231884058,
+        "location": {
+          "lat": 35.630954,
+          "lng": 139.776504
+        },
+        "name": "Odaiba Marine Park",
+        "city": "Minato",
+        "country": " Japan",
+        "marker": "relaxing:park",
+        "categories": [
+          "hiking",
+          "relaxing"
+        ],
+        "perex": "Swimming is forbidden on this beach, but it still makes for a romantic walk, especially in the evening."
+      }
+    ],
+    "lat": 35.630954,
+    "lng": 139.776504
+  },
+  "Singapore": {
+    "places": [
+      {
+        "id": "poi:21425",
+        "rating": 0.65803195837978,
+        "location": {
+          "lat": 1.2525455,
+          "lng": 103.8218737
+        },
+        "name": "Sentosa",
+        "city": "Singapore",
+        "country": " Singapore",
+        "marker": "sightseeing:tower:lookout:observation",
+        "categories": [
+          "playing",
+          "going_out",
+          "relaxing",
+          "discovering"
+        ],
+        "perex": "This island serves as one big entertainment center. This is where you go to have some fun - theme parks, lookout tower, botanical gardens,вЂ¦"
+      }
+    ],
+    "lat": 1.2525455,
+    "lng": 103.8218737
+  },
+  "Southern Region": {
+    "places": [
+      {
+        "id": "poi:58634",
+        "rating": 0.1650215533259,
+        "location": {
+          "lat": 63.5649512,
+          "lng": -19.6081632
+        },
+        "name": "Seljavallalaug",
+        "city": "Southern Region",
+        "country": " Iceland",
+        "marker": "sports:pool:outdoor",
+        "categories": [
+          "hiking",
+          "sightseeing",
+          "doing_sports"
+        ],
+        "perex": "Seljavallalaug is a protected 25-metre outdoor pool in southern Iceland."
+      }
+    ],
+    "lat": 63.5649512,
+    "lng": -19.6081632
+  },
+  "Sydney": {
+    "places": [
+      {
+        "id": "poi:21800",
+        "rating": 0.45190375325158,
+        "location": {
+          "lat": -33.8916823,
+          "lng": 151.2771905
+        },
+        "name": "Bondi Beach",
+        "city": "Sydney",
+        "country": " Australia",
+        "marker": "sports:pool:swimming",
+        "categories": [
+          "relaxing",
+          "sightseeing",
+          "doing_sports"
+        ],
+        "perex": "With clear sea waves washing the shore, famously soft sand on the banks, and iconic sunsets, this beach is one of the most popular andвЂ¦"
+      }
+    ],
+    "lat": -33.8916823,
+    "lng": 151.2771905
+  },
+  "Budapest": {
+    "places": [
+      {
+        "id": "poi:1507",
+        "rating": 0.28616610925307,
+        "location": {
+          "lat": 47.5264423,
+          "lng": 19.0478205
+        },
+        "name": "Margaret Island",
+        "city": "Budapest",
+        "country": " Hungary",
+        "marker": "sports:pool:swimming",
+        "categories": [
+          "hiking",
+          "relaxing",
+          "doing_sports"
+        ],
+        "perex": "Margaret Island is a 2.5 km long island, 500 metres wide, in the middle of the Danube in central Budapest, Hungary."
+      }
+    ],
+    "lat": 47.5264423,
+    "lng": 19.0478205
+  },
+  "Far Eastern Federal District": {
+    "places": [
+      {
+        "id": "poi:11365",
+        "rating": 0.28319323671498,
+        "location": {
+          "lat": 65.6304951,
+          "lng": -16.8480832
+        },
+        "name": "Myvatn Nature Baths",
+        "city": "Far Eastern Federal District",
+        "country": " Iceland",
+        "marker": "sports:pool:swimming",
+        "categories": [
+          "sightseeing",
+          "relaxing",
+          "doing_sports"
+        ],
+        "perex": "This soothing bath will help you relax and improve your health, thanks to the minerals in the water. A great experience."
+      }
+    ],
+    "lat": 65.6304951,
+    "lng": -16.8480832
+  },
+  "Porto Moniz": {
+    "places": [
+      {
+        "id": "poi:4062",
+        "rating": 0.10184801189149,
+        "location": {
+          "lat": 32.8687072,
+          "lng": -17.1703866
+        },
+        "name": "Natural Swimming Pools",
+        "city": "Porto Moniz",
+        "country": " Portugal",
+        "marker": "sports:pool:swimming",
+        "categories": [
+          "hiking",
+          "doing_sports"
+        ],
+        "perex": "These natural lava pools are a great place to enjoy safe and convenient swimming - due to the safeguards and numerous facilities."
+      }
+    ],
+    "lat": 32.8687072,
+    "lng": -17.1703866
+  },
+  "Bali": {
+    "places": [
+      {
+        "id": "poi:22136",
+        "rating": 0.078808249721293,
+        "location": {
+          "lat": -8.2106442,
+          "lng": 114.9671196
+        },
+        "name": "Banjar Hot Springs",
+        "city": "Bali",
+        "country": " Indonesia",
+        "marker": "sleeping:hotel:resort",
+        "categories": [
+          "sightseeing",
+          "relaxing",
+          "doing_sports",
+          "sleeping"
+        ],
+        "perex": "Historical resort built on natural hot springs is surrounded by jungle and tropical flowers and therefore the atmosphere is quite peaceful."
+      }
+    ],
+    "lat": -8.2106442,
+    "lng": 114.9671196
+  },
+  "Phuket Province": {
+    "places": [
+      {
+        "id": "poi:23743",
+        "rating": 0.074348940914158,
+        "location": {
+          "lat": 7.843712,
+          "lng": 98.2930086
+        },
+        "name": "Karon Beach",
+        "city": "Phuket Province",
+        "country": " Thailand",
+        "marker": "sports:water:diving:snorkeling",
+        "categories": [
+          "relaxing",
+          "playing",
+          "hiking",
+          "doing_sports"
+        ],
+        "perex": "Karon Beach refers to a beach, and the town adjoining it, on the west coast of Phuket, Thailand."
+      }
+    ],
+    "lat": 7.843712,
+    "lng": 98.2930086
+  },
+  "Copenhagen": {
+    "places": [
+      {
+        "id": "poi:2958",
+        "rating": 0.070632850241546,
+        "location": {
+          "lat": 55.6684116,
+          "lng": 12.5775382
+        },
+        "name": "Islands Brygge Harbor Bath",
+        "city": "Copenhagen",
+        "country": " Denmark",
+        "marker": "sports:pool:swimming",
+        "categories": [
+          "relaxing",
+          "doing_sports"
+        ],
+        "perex": "Copenhagen Harbour Baths is a system of recreational bathing facilities along the waterfront of Copenhagen, Denmark."
+      }
+    ],
+    "lat": 55.6684116,
+    "lng": 12.5775382
+  },
+  "Selfoss": {
+    "places": [
+      {
+        "id": "poi:60444",
+        "rating": 0.068403195837978,
+        "location": {
+          "lat": 63.9354611,
+          "lng": -20.9976713
+        },
+        "name": "SundhГ¶ll Selfoss",
+        "city": "Selfoss",
+        "country": " Iceland",
+        "marker": "sports:pool:swimming",
+        "categories": [
+          "relaxing",
+          "doing_sports"
+        ],
+        "perex": "Geothermal pool."
+      }
+    ],
+    "lat": 63.9354611,
+    "lng": -20.9976713
+  }
+}

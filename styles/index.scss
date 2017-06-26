@@ -1,0 +1,626 @@
+/**
+ * index.scss
+ * - Add any styles you want here!
+ */
+
+$color--primary: #0E8E94;
+$color--accent: #97C3C9;
+$color--background: #161E25;
+
+
+@mixin gradient {
+  background-color: $color--primary;
+  background: -moz-linear-gradient(-45deg, $color--primary 0%, #063e34 100%);
+  background: -webkit-linear-gradient(-45deg, $color--primary 0%,#063e34 100%);
+  background: linear-gradient(135deg, $color--primary 0%,#063e34 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$color--primary', endColorstr='#063e34',GradientType=1 );
+}
+
+
+@mixin gradient-2 {
+  background: rgba(7,67,60,0.58);
+  background: -moz-linear-gradient(-45deg, rgba(7,67,60,0.58) 0%, rgba(0,0,0,1) 100%);
+  background: -webkit-linear-gradient(-45deg, rgba(7,67,60,0.58) 0%,rgba(0,0,0,1) 100%);
+  background: linear-gradient(135deg, rgba(7,67,60,0.58) 0%,rgba(0,0,0,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#07433c', endColorstr='#000000',GradientType=1 );
+}
+
+
+@mixin gradient-yellow {
+  background: rgba(48,35,174,0.58);
+  background: -moz-linear-gradient(-45deg, rgba(126, 49, 162,0.58) 0%, rgba(48,35,174,1) 100%);
+  background: -webkit-linear-gradient(-45deg, rgba(126, 49, 162,0.58) 0%,rgba(48,35,174,1) 100%);
+  background: linear-gradient(135deg, rgba(126, 49, 162,0.58) 0%,rgba(48,35,174,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7E31A2', endColorstr='#FFE200',GradientType=1 );
+}
+
+
+body {
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  background-color: $color--background;
+
+}
+
+* { box-sizing: border-box; }
+
+
+.container {
+  background-color: #0E8E94;
+  margin: 0px auto;
+}
+
+.column--left {
+  width: 25%;
+  position: fixed;
+  height: 100%;
+  max-height: 100%;
+  overflow-y: auto;
+  top:0;
+  left:0;
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+
+  @include gradient;
+
+  .empty-state {
+    margin: 40px 0;
+    color: $color--accent;
+    font-weight: 600;
+
+    span {
+      color: white;
+      font-size: 18px;
+    }
+  }
+
+  .location {
+      padding: 15px;
+    color: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .title {
+    color: $color--accent;
+    font-weight: 700;
+    margin-top: 40px;
+    font-size: 14px;
+    padding: 0 15px;
+  }
+
+
+  
+  .icon {
+    cursor: pointer;
+    
+    &:hover {
+      color: $color--accent;
+    }
+  }
+  
+}
+
+.interest {
+  background-color: darken($color--primary,20%);
+  height: 40px;
+  line-height: 40px;
+  color: #fff;
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 0 0;
+  @include gradient-yellow;
+
+  .interest-icon {
+    float: left;
+    width: 30px;
+    height: 40px;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    background-position: center left;
+  }
+
+  &.skateboarding {
+
+    .interest-icon {
+      background-image: url(../images/icon-skateboarding.png);
+    }
+  }
+
+  &.diving {
+    .interest-icon {
+      background-image: url(../images/icon-diving.png);
+      background-size: 20px;
+    }
+  }
+
+  &.surfing {
+    .interest-icon {
+      background-image: url(../images/icon-surfing.png);
+    }
+  }
+
+  &.hiking {
+    .interest-icon {
+      background-image: url(../images/icon-hiking.png);
+    }
+  }
+
+
+  &.sightseeings {
+    .interest-icon {
+      background-image: url(../images/icon-photo.png);
+    }
+  }
+
+  &.horse-riding {
+    .interest-icon {
+      background-image: url(../images/icon-horseriding.png);
+    }
+  }
+
+  &.sailing {
+    .interest-icon {
+      background-image: url(../images/icon-sailing.png);
+    }
+  }
+
+  &.dolphin {
+    .interest-icon {
+      background-image: url(../images/icon-dolphin.png);
+    }
+
+  }
+  &.kayaking {
+    .interest-icon {
+      background-image: url(../images/icon-kayaking.png);
+    }
+  }
+  &.food {
+    .interest-icon {
+      background-image: url(../images/icon-food.png);
+      background-size: 20px;
+    }
+  }
+
+  &.bar {
+    .interest-icon {
+      background-image: url(../images/icon-bars.png);
+    }
+  }
+
+  &.beach {
+    .interest-icon {
+      background-image: url(../images/icon-beach.png);
+    }
+  }
+
+  &.massages {
+    .interest-icon {
+      background-image: url(../images/icon-massages.png);
+      background-size: 20px;
+    }
+  }
+
+
+}
+
+.button--link {
+  text-decoration: underline;
+  cursor: pointer;
+  
+  &:hover {
+    color: $color--accent;
+  }
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+.column--right {
+  width: 75%;
+  background-color: $color--background;
+  padding: 15px 15px 25px;
+  margin-left: 25%;
+
+  .placeholder {
+    height: 135px;
+    width: 100%;
+  }
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  .search {
+    padding: 0 25px 15px;
+    border-bottom: 3px solid $color--primary;
+    color: $color--primary;
+    position: fixed;
+    top: 0;
+    left: 25%;
+    z-index: 100;
+    right: 0;
+    background: $color--background;
+
+    input {
+      border: 0;
+      height: 50px;
+      width: 90%;
+      background: transparent;
+      padding: 10px;
+      font-size: 14px;
+      color:$color--primary;
+
+    }
+  }
+  
+  .list {
+   
+  }
+  .tile {
+    margin: 15px 0 0px 15px;
+    width: 250px;
+    height: 250px;
+    float: left;
+    padding: 15px;
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+    background-size: cover;
+    background-position: 25% 0;
+    cursor: pointer;
+    transition: ease-in-out 0.2s all;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+
+
+    &:hover {
+      transform: scale(1.02);
+    }
+
+    &:active {
+      transform: scale(0.98);
+    }
+
+    .gradient-layer {
+      position: absolute;
+      top: 0; left: 0; bottom: 0; right: 0;
+      @include gradient-2;
+
+    }
+
+    .name {
+      z-index: 50;
+      position: absolute;
+      left: 15px;
+      right: 15px;
+      bottom: 0;
+      color: #fff;
+      font-weight: 600;
+      text-transform: uppercase;
+      text-align: center;
+      padding: 15px;
+      border-top: 1px solid white;
+    }
+
+    .icon {
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      top: 70px;
+      left: 80px;
+      background-repeat: no-repeat;
+      background-size: 80px;
+    }
+
+
+
+    &.selected {
+      .gradient-layer {
+        @include gradient-yellow
+
+      }
+
+      &:after {
+        content:'';
+        background-image: url(../images/check.png);
+        background-size: cover;
+        height: 20px;
+        width: 20px;
+        position: absolute;
+        z-index: 20;
+        right: 15px;
+        top: 15px;
+
+      }
+    }
+
+    &.skateboarding {
+      background-image: url(../images/bg-skateboard.jpg);
+
+      .icon {
+        background-image: url(../images/icon-skateboarding.png);
+        background-position: 0 20px;
+      }
+    }
+
+    &.diving {
+      background-image: url(../images/bg-diving.jpg);
+
+      .icon {
+        background-image: url(../images/icon-diving.png);
+        background-size: 70px;
+        left: 90px;
+      }
+    }
+
+    &.surfing {
+      background-image: url(../images/bg-surfing.jpg);
+
+      .icon {
+        background-image: url(../images/icon-surfing.png);
+      }
+    }
+
+    &.hiking {
+      background-image: url(../images/bg-hiking.jpeg);
+
+      .icon {
+        background-image: url(../images/icon-hiking.png);
+      }
+    }
+
+    &.sightseeings {
+      background-image: url(../images/bg-sightseeings.jpg);
+
+      .icon {
+        background-image: url(../images/icon-photo.png);
+      }
+    }
+
+    &.horse-riding {
+      background-image: url(../images/bg-horseriding.jpg);
+
+      .icon {
+        background-image: url(../images/icon-horseriding.png);
+      }
+    }
+
+    &.sailing {
+      background-image: url(../images/bg-sailing.jpg);
+
+
+      .icon {
+        background-image: url(../images/icon-sailing.png);
+      }
+    }
+
+    &.dolphin {
+      background-image: url(../images/bg-dolphin.jpeg);
+
+
+      .icon {
+        background-image: url(../images/icon-dolphin.png);
+      }
+
+    }
+    &.kayaking {
+      background-image: url(../images/bg-kayaking.jpeg);
+
+      .icon {
+        background-image: url(../images/icon-kayaking.png);
+      }
+    }
+    &.bar {
+      background-image: url(../images/bg-bar.jpg);
+
+      .icon {
+        background-image: url(../images/icon-bars.png);
+        background-size: 70px;
+        left: 90px;
+      }
+    }
+
+    &.massages {
+      background-image: url(../images/bg-massages.jpg);
+
+      .icon {
+        background-image: url(../images/icon-massages.png);
+        background-size: 70px;
+        left: 90px;
+      }
+    }
+
+    &.food{
+      background-image: url(../images/bg-food.jpg);
+
+      .icon {
+        background-image: url(../images/icon-food.png);
+        background-size: 70px;
+        left: 90px;
+      }
+    }
+
+    &.beach{
+      background-image: url(../images/bg-beach.jpg);
+
+      .icon {
+        background-image: url(../images/icon-beach.png);
+        background-size: 70px;
+        left: 90px;
+      }
+    }
+  }
+}
+
+.logo {
+  font-family: 'Baloo', cursive;
+  font-size: 24px;
+  color: #fff;
+  margin: 15px;
+  background-image: url(../images/logo.png);
+  background-repeat: no-repeat;
+  height: 40px;
+  background-size: 130px;
+}
+
+.button--huge {
+  padding: 60px 15px 15px;
+  background-color: darken($color--primary,20%);
+  color: #fff;
+  margin-top: 30px;
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  transition: ease-in-out 0.5s height;
+
+  .count {
+    font-weight: 800;
+    font-size: 32px;
+  }
+
+  .button-transparent{
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+
+  }
+}
+
+
+.cities {
+  .city {
+    background: #222;
+    padding: 25px;
+    height: 380px;
+    border-radius: 4px;
+    overflow:hidden;
+    position: relative;
+    color: #fff;
+    margin: 15px;
+
+
+    .top {
+      display: flex;
+      z-index: 5;
+      position: relative;
+      justify-content: space-between;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+
+      .info {
+        .title {
+          font-size: 32px;
+          font-weight: 700;
+
+        }
+      }
+
+      .rating {
+        font-size: 28px;
+        letter-spacing: 6px;
+
+        .yellow {
+          color: #FFE200;
+        }
+      }
+    }
+
+    .bottom {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 15px 25px;
+      @include gradient;
+      display: flex;
+      justify-content: space-between;
+      z-index: 5;
+
+      a {
+        color: #fff;
+      }
+
+      .main-text {
+        padding: 5px 0;
+      }
+    }
+
+    .map {
+      position: absolute;
+      top: 0; bottom: 0; left: 0; right: 0;
+      z-index: 1;
+    }
+
+    .gradient-layer-map {
+      @include gradient-2;
+      position: absolute;
+      top: 0; bottom: 0; left: 0; right: 0;
+      z-index: 2;
+    }
+
+    &.barcelona {
+      .map {
+        background-image: url(../images/map-barcelona.png);
+        background-repeat:no-repeat;
+        background-size: cover;
+      }
+    }
+  }
+
+}
+
+.center {
+  text-align: center;
+}
+
+.button-transparent {
+  display: inline-block;
+  border: 1px solid #B656E4;
+  padding: 15px 30px;
+  font-size: 22px;
+  border-radius: 4px;
+  color: white;
+  margin: 80px auto 0;
+  position: relative;
+  cursor: pointer;
+  overflow:hidden;
+  z-index: 50;
+
+  .bg {
+    transition: ease-in-out 0.2s all;
+
+    @include gradient-yellow;
+    opacity: 0.6;
+    z-index: 5;
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+  }
+
+  .text {
+    position: relative;
+    z-index: 10;
+  }
+
+  &:hover {
+    .bg {
+      opacity: 0.9;
+    }
+  }
+
+  &.small {
+    padding: 5px 10px;
+    font-size: 14px;
+    margin: 0;
+  }
+}
+
+.margin10 {
+  margin: 10px;
+}
